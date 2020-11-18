@@ -1,4 +1,4 @@
-package Modelo;
+package com.lis.Modelo;
 
 public class Movie {
     private String id;
