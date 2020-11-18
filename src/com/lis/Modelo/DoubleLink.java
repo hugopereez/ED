@@ -1,4 +1,4 @@
-package Modelo;
+package com.lis.Modelo;
 
 public class DoubleLink {
     private Movie movie;
@@ -13,6 +13,10 @@ public class DoubleLink {
 
     public Movie getData() {
         return movie;
+    }
+
+    public void setData(Movie movie){
+        this.movie = movie;
     }
 
     public DoubleLink getNext() {

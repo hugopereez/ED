@@ -1,4 +1,4 @@
-package Modelo;
+package com.lis.Modelo;
 
 public class DoubleLinkList {
     private DoubleLink head;
@@ -176,7 +176,7 @@ public class DoubleLinkList {
         }
     }
     
-    public DoubleLink deleteIn(int index, Object data){
+    public DoubleLink deleteIn(int index){
         DoubleLink deleted = null;
         if(index < getSize() || index >= 0){
             if(index == 0){
@@ -206,7 +206,7 @@ public class DoubleLinkList {
     public DoubleLink deleteBeforeThis(DoubleLink link){
         int index = getIndex(link);
         if(index > 0 && index < getSize()){
-            return deleteIn(index - 1, link.getData());
+            return deleteIn(index - 1);
         }
         return null;
     }

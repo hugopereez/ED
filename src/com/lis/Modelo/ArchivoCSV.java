@@ -1,4 +1,4 @@
-package Modelo;
+package com.lis.Modelo;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
