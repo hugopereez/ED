@@ -19,7 +19,7 @@ Pre-requisitos 📋
 
 Construido con 🛠️
 
-    Lenguae de Programacion Java
+    Lenguaje de Programacion Java
 
 
 
@@ -28,7 +28,7 @@ Autores ✒️
 Hugo Pérez 
 Uriel Perez
 Esteban Madrazo
-Sara Salas
+Yahaira Salas
 Leoncio Montalvo
 Ignacio Pananá 
 Alejandro
