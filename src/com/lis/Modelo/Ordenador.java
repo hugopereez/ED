@@ -1,26 +1,42 @@
 package com.lis.Modelo;
 
 public class Ordenador {
-    public void shell(int A[]) {
 
-        int salto, aux, i;
+    
+    /* Ordena tomando como parametro la duración de la pelicula */
+
+    public void shell(DoubleLinkList lista) {
+
+        int salto, i;
+        Movie aux;
         boolean cambios;
   
-        for (salto = A.length / 2; salto != 0; salto /= 2) {
+        for (salto = lista.getSize() / 2; salto != 0; salto /= 2) {
             cambios = true;
             while (cambios) {                                        
                 cambios = false;
-                for (i = salto; i < A.length; i++)   
+                for (i = salto; i < lista.getSize(); i++)   
                 {
-                    if (A[i - salto] > A[i]) {       
-                        aux = A[i];                 
-                        A[i] = A[i - salto];
-                        A[i - salto] = aux;
+                    try{
+                    String duracion1 = ((lista.getIndexLink(i - salto)).getData().getDuracion());
+                    String duracion2 =((lista.getIndexLink(i)).getData().getDuracion());                    
+                    int d1= Integer.parseInt(duracion1);
+                    int d2= Integer.parseInt(duracion2);
+                   
+
+                    if (d1 > d2) {       
+                        aux = lista.getIndexLink(i).getData();   
+                        lista.getIndexLink(i).setData(lista.getIndexLink(i - salto).getData());          
+                        lista.getIndexLink(i - salto).setData(aux);
                         cambios = true;                                                 
                     }
+                }catch(NumberFormatException e){
+                    System.out.println("elementos no comparables");
+                }
                 }
             }
         }
+    }
     public void insertionSort(DoubleLinkList lista){
         int i, j;  
         DoubleLink key;
