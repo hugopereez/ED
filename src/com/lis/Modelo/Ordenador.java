@@ -34,19 +34,18 @@ public class Ordenador {
             lista.getIndexLink(j+1).setData(key.getData());
         }  
     }
-    public void bubbleSort(int[] array) {
-        for (int i = array.length - 1; i > 0; i--) {
+    public void bubbleSort(DoubleLinkList lista) {
+        for (int i = lista.getSize(); i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                if (array[j] > array[j + 1]) {
-                    swap(array, j, j+1);
+                if (Integer.parseInt(lista.getIndexLink(j).getData().getId()) < Integer.parseInt(lista.getIndexLink(j+1).getData().getId())) {
+                    swap(lista, j, j+1);
                 }
             }
-            System.out.println("Change of partition index");
         }
     }
-    public void swap(int[] array, int a, int b) {
-        int value = array[b];
-        array[b] = array[a];
-        array[a] = value;
+    public void swap(DoubleLinkList lista, int a, int b) {
+        DoubleLink value = lista.getIndexLink(b);
+        lista.getIndexLink(b).setData(lista.getIndexLink(a).getData());
+        lista.getIndexLink(a).setData(value.getData());
     }
 }
