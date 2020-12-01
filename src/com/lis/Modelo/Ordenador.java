@@ -50,4 +50,33 @@ public class Ordenador {
             lista.getIndexLink(j+1).setData(key.getData());
         }  
     }
+
+    publiic void quickSort(DoubleLinkList lista){
+        int a[] = new int[lista.getSize()];
+        quickSort(a, 0, a.length-1);
+    }
+    public void quickSort(double a[], int first, int last){
+        int i, j, central, aux;
+        double pivote;
+        central = (first + last)/2;
+        pivote = a[central];
+        i = first;
+        j = last;
+        do{
+            while(a[i]<pivote) i++:
+            while(a[j]<pivote) j--;
+            if(i<= j){
+                aux = a[i];
+                a[i] = a[j];
+                a[j] = aux;
+                i++;
+                j--;
+            }
+        }
+        while(i<= j);
+        if(first < j)
+        quickSort(a,first, j);
+        if(i < last)
+        quickSort(a, i, last);
+    }
 }
