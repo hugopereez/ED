@@ -50,4 +50,38 @@ public class Ordenador {
             lista.getIndexLink(j+1).setData(key.getData());
         }  
     }
+    public void selectionSort(DoubleLinkList lista) 
+    { 
+        int n = lista.getSize(); 
+  
+        // recorrimiento de la lista no ordenada 
+        for (int i = 0; i < n-1; i++) 
+        { 
+            // encuentra el elemento mas pequeño
+            int minIdx = i; //indice del elemento mas pequeño
+            
+            for (int j = i+1; j < n; j++) 
+            {
+            	if (Integer.parseInt((lista.getIndexLink(j)).getData().getDuracion()) < 
+                		Integer.parseInt((lista.getIndexLink(minIdx)).getData().getDuracion()))
+            	{
+                	
+                	min_idx = j;
+                }
+            }
+                
+                     
+  
+            // intercambio del elemeto mas pequeño con el primero
+            if(minIdx != i) {
+            	Movie temp;
+            	temp = lista.getIndexLink(minIdx).getData();
+            	lista.getIndexLink(minIdx).setData(lista.getIndexLink(i).getData());
+            	lista.getIndexLink(i).setData(temp);
+            }else{
+            	//no hace nada
+            }
+             
+        } 
+    }
 }
